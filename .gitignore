@@ -1,0 +1,80 @@
+# Root .gitignore
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.docker
+.env.production
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+*.log
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Docker
+docker-compose.override.yml
+
+# MongoDB
+mongodb_data/
+dump/
+
+# Misc
+.cache/
+.tmp/
+*.pid
+*.seed
+*.pid.lock
+
+# Compiled files
+*.class
+*.jar
+*.exe
+*.o
+*.so
+
+# Package files
+*.tar.gz
+*.zip
+*.rar
+
+# Temporary files
+tmp/
+temp/

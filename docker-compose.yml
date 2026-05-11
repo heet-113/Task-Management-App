@@ -1,0 +1,43 @@
+version: '3.8'
+backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: task-management-backend
+    ports:
+      - "2000:2000"
+    environment:
+      # No MongoDB required; backend uses JSON file storage
+      JWT_SECRET: your_jwt_secret_key_here
+      PORT: 2000
+      NODE_ENV: development
+      CLIENT_URL: http://localhost:3000
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: npm run dev
+
+frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: task-management-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      REACT_APP_API_URL: http://localhost:2000/api
+      REACT_APP_SOCKET_URL: http://localhost:2000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+
+volumes:
+  mongodb_data:
+
+networks:
+  default:
+    name: task-management-network
