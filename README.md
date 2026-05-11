@@ -2,6 +2,8 @@
 
 A modern, full-stack task management application built with Node.js, Express, React, and MongoDB. Features user authentication, real-time updates via WebSockets, and a responsive design for web and mobile devices.
 
+[Live Demo](https://heet-113.github.io/Task-Management-App-Frontend/)
+
 ## 🎯 Key Features
 
 - **User Authentication & Authorization**
